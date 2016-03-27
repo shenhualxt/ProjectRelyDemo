@@ -1,0 +1,35 @@
+platform :ios, '7.0'
+
+#忽略所有警告
+inhibit_all_warnings!
+
+#指定workspace名称，没有则生成新的   路径是相对于Podfile路径（同下）
+workspace 'ProjectRelyDemo.xcworkspace'
+
+#配置默认的xcodeproj 路径是相对于Podfile路径
+xcodeproj 'FirstProject/FirstProject'
+
+target :FirstProject do
+    xcodeproj 'FirstProject/FirstProject'
+    pod 'Masonry', '0.6.4'
+    pod 'ReactiveCocoa','2.5'
+end
+
+target :SecondProject do
+    xcodeproj 'SecondProject/SecondProject'
+    pod 'Masonry', '0.6.4'
+    pod 'ReactiveCocoa','2.5'
+end
+
+
+target :Business_lib do
+    xcodeproj 'Business_lib/Business_lib'
+    pod 'ReactiveCocoa','2.5'
+end
+
+target :Base_lib do
+    xcodeproj 'Base_lib/Base_lib'
+    pod 'ReactiveCocoa','2.5'
+end
+
+
